@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Phone } from "lucide-react";
 import { useQuoteModal } from "@/components/QuoteModal";
 import { BUSINESS } from "@/config/business";
+import defaultPageHeroBg from "@/assets/stock/page-hero-bg.jpg";
 
 interface PageHeroProps {
   eyebrow?: string;
@@ -13,16 +14,11 @@ interface PageHeroProps {
 
 const PageHero = ({ eyebrow, title, subtitle, image, children }: PageHeroProps) => {
   const { openQuoteModal } = useQuoteModal();
+  const bg = image ?? defaultPageHeroBg;
   return (
     <section className="relative -mt-[120px] lg:-mt-[180px] pt-[160px] lg:pt-[240px] pb-16 lg:pb-24 overflow-hidden">
-      {image ? (
-        <>
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }} />
-          <div className="absolute inset-0 bg-black/70" />
-        </>
-      ) : (
-        <div className="absolute inset-0 hero-gradient" />
-      )}
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }} />
+      <div className="absolute inset-0 bg-black/70" />
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center text-white max-w-4xl">
         {eyebrow && (
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest">{eyebrow}</span>
