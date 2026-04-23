@@ -3,10 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { BUSINESS } from "@/config/business";
 
-const WEBHOOK_URL = "https://example.com/webhook-placeholder";
+const WEBHOOK_URL = BUSINESS.webhooks.quote;
 
 interface QuoteFormProps {
   showHeader?: boolean;
@@ -55,6 +55,8 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
           help_with: formData.helpWith.trim(),
           consent_marketing: formData.consentMarketing,
           consent_non_marketing: formData.consentNonMarketing,
+          source: "website-quote-form",
+          business: BUSINESS.name,
         }),
       });
 
@@ -69,11 +71,10 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
   if (isSubmitted) {
     return (
       <div
-        className={`rounded-2xl ${compact ? 'p-5' : 'p-8'} shadow-2xl flex flex-col items-center justify-center text-center ${compact ? 'min-h-[300px]' : 'min-h-[400px]'} ${className}`}
-        style={{
-          backgroundColor: "#1a1a1a",
-          ...style,
-        }}
+        className={`rounded-2xl ${compact ? "p-5" : "p-8"} shadow-2xl flex flex-col items-center justify-center text-center ${
+          compact ? "min-h-[300px]" : "min-h-[400px]"
+        } ${className}`}
+        style={{ backgroundColor: "#0b1220", ...style }}
       >
         <h2 className="font-heading font-bold text-white text-3xl mb-4">THANK YOU!</h2>
         <p className="text-white/80 text-lg">We got your request and will be in touch shortly!</p>
@@ -85,17 +86,12 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
     <form
       id={id}
       onSubmit={handleSubmit}
-      className={`rounded-2xl ${compact ? 'p-5 space-y-3' : 'p-8 space-y-6'} shadow-2xl ${className}`}
-      style={{
-        backgroundColor: "#1a1a1a",
-        ...style,
-      }}
+      className={`rounded-2xl ${compact ? "p-5 space-y-3" : "p-8 space-y-6"} shadow-2xl ${className}`}
+      style={{ backgroundColor: "#0b1220", ...style }}
     >
       {showHeader && (
-        <div className={`text-center ${compact ? 'space-y-2 pb-1' : 'space-y-3 pb-2'}`}>
-          <h2 className={`font-heading font-bold text-white ${compact ? 'text-3xl mt-1' : 'text-4xl'}`}>
-            Get a Free Quote
-          </h2>
+        <div className={`text-center ${compact ? "space-y-2 pb-1" : "space-y-3 pb-2"}`}>
+          <h2 className={`font-heading font-bold text-white ${compact ? "text-3xl mt-1" : "text-4xl"}`}>Get a Free Quote</h2>
         </div>
       )}
 
@@ -122,7 +118,7 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
           id="phone"
           type="tel"
           inputMode="numeric"
-          placeholder="(888) 123-4567"
+          placeholder="(540) 370-2844"
           maxLength={10}
           value={formData.phone}
           onChange={(e) => {
@@ -153,19 +149,13 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
         <Checkbox
           id="consentMarketing"
           checked={formData.consentMarketing}
-          onCheckedChange={(checked) =>
-            setFormData({ ...formData, consentMarketing: checked === true })
-          }
+          onCheckedChange={(checked) => setFormData({ ...formData, consentMarketing: checked === true })}
           className="mt-1 border-white/30 data-[state=checked]:bg-secondary data-[state=checked]:border-secondary"
         />
-        <Label
-          htmlFor="consentMarketing"
-          className="text-white/70 text-xs leading-relaxed font-normal cursor-pointer"
-        >
-          I consent to receive marketing text messages from Nick's Property Services at the
-          phone number provided. Consent is not a condition of purchase. Message
-          frequency may vary. Message &amp; data rates may apply. Text HELP for
-          assistance, reply STOP to opt out.
+        <Label htmlFor="consentMarketing" className="text-white/70 text-xs leading-relaxed font-normal cursor-pointer">
+          I consent to receive marketing text messages from {BUSINESS.name} at the phone number provided.
+          Consent is not a condition of purchase. Message frequency may vary. Message &amp; data rates may apply.
+          Text HELP for assistance, reply STOP to opt out.
         </Label>
       </div>
 
@@ -173,32 +163,22 @@ const QuoteForm = ({ showHeader = true, compact = false, className = "", style, 
         <Checkbox
           id="consentNonMarketing"
           checked={formData.consentNonMarketing}
-          onCheckedChange={(checked) =>
-            setFormData({ ...formData, consentNonMarketing: checked === true })
-          }
+          onCheckedChange={(checked) => setFormData({ ...formData, consentNonMarketing: checked === true })}
           className="mt-1 border-white/30 data-[state=checked]:bg-secondary data-[state=checked]:border-secondary"
         />
-        <Label
-          htmlFor="consentNonMarketing"
-          className="text-white/70 text-xs leading-relaxed font-normal cursor-pointer"
-        >
-          I consent to receive non-marketing text messages from Nick's Property Services
-          regarding appointment confirmations and reminders, customer support
-          updates, and service-related follow-ups at the phone number provided.
-          Consent is not a condition of purchase. Message frequency may vary.
-          Message &amp; data rates may apply. Text HELP for assistance, reply STOP
-          to opt out.
+        <Label htmlFor="consentNonMarketing" className="text-white/70 text-xs leading-relaxed font-normal cursor-pointer">
+          I consent to receive non-marketing text messages from {BUSINESS.name} for service updates,
+          appointment reminders, and quote follow-ups. Message &amp; data rates may apply. Reply STOP to opt out.
         </Label>
       </div>
 
-      <Button
+      <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full font-bold ${compact ? 'text-base py-4' : 'text-lg py-6'} hover:opacity-90 transition-opacity`}
-        style={{ backgroundColor: "hsl(43, 80%, 50%)", color: "#fff", borderRadius: "10px" }}
+        className="w-full py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
       >
-        {isSubmitting ? "Sending..." : "Get Free Quote"}
-      </Button>
+        {isSubmitting ? "Submitting…" : "Get My Free Quote"}
+      </button>
     </form>
   );
 };
