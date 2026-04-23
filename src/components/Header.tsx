@@ -16,7 +16,6 @@ const navLinks = [
     label: "Service Areas",
     children: BUSINESS.serviceAreas.map((a) => ({ label: a.name, href: `/service-areas/${a.slug}` })),
   },
-  { label: "Gallery", href: "/gallery" },
   {
     label: "Contact",
     children: [
