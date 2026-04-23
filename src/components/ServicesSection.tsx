@@ -1,48 +1,82 @@
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { SERVICES } from "@/config/business";
 
-const services = [
-  {
-    title: "Residential Junk Removal",
-    href: "#",
-    features: [
-      "Old furniture & appliance hauling",
-      "Garage, attic & basement cleanouts",
-      "Estate & foreclosure cleanups",
-      "Same-day pickup available",
-    ],
-  },
-  {
-    title: "Commercial Junk Removal",
-    href: "#",
-    features: [
-      "Office furniture & equipment removal",
-      "Retail & warehouse cleanouts",
-      "Bulk item disposal",
-      "Scheduled recurring pickups",
-    ],
-  },
-  {
-    title: "Construction Debris Removal",
-    href: "#",
-    features: [
-      "Lumber, drywall & concrete hauling",
-      "Renovation & remodel cleanup",
-      "Job site debris removal",
-      "Responsible disposal & recycling",
-    ],
-  },
-  {
-    title: "Yard Waste Removal",
-    href: "#",
-    features: [
-      "Tree branch & brush removal",
-      "Storm debris cleanup",
-      "Landscaping waste hauling",
-      "Green waste recycling",
-    ],
-  },
-];
+const featureMap: Record<string, string[]> = {
+  "commercial-clean-outs": [
+    "Office furniture & equipment removal",
+    "Retail & warehouse cleanouts",
+    "Bulk item disposal",
+    "Scheduled or one-time service",
+  ],
+  "residential-clean-outs": [
+    "Whole-home, garage & basement cleanouts",
+    "Old furniture & junk hauled out",
+    "Same-day pickup available",
+    "Eco-friendly disposal & donation",
+  ],
+  "estate-clean-outs": [
+    "Compassionate, full-property service",
+    "Sort, donate, recycle, and dispose",
+    "Coordinated with family or executor",
+    "Discreet and respectful crew",
+  ],
+  "foreclosure-clean-outs": [
+    "Bank-ready property turnover",
+    "Interior, garage & yard cleanouts",
+    "Quick turnaround for lenders",
+    "Documented before/after",
+  ],
+  "property-manager-clean-outs": [
+    "Fast unit turnovers",
+    "Volume pricing for managers",
+    "Trusted, on-time crew",
+    "Single point of contact",
+  ],
+  "realtor-clean-outs": [
+    "Show-ready listings, fast",
+    "Bulk furniture & junk removal",
+    "Yard debris & garage cleanout",
+    "Flexible scheduling",
+  ],
+  "eviction-clean-outs": [
+    "Discreet, full-property cleanout",
+    "Donation & disposal",
+    "Photo documentation available",
+    "Quick, professional turnaround",
+  ],
+  "construction-cleanup": [
+    "Lumber, drywall & concrete hauling",
+    "Renovation & remodel debris",
+    "Job-site cleanup for contractors",
+    "Responsible disposal & recycling",
+  ],
+  "furniture-removal": [
+    "Couches, beds, dressers & desks",
+    "Office furniture removal",
+    "We do all the heavy lifting",
+    "Donation when possible",
+  ],
+  "mattress-removal": [
+    "Mattresses & box springs",
+    "Single items or full sets",
+    "Recycled when possible",
+    "Quick, easy pickup",
+  ],
+  "appliance-removal": [
+    "Fridges, washers, dryers & ovens",
+    "Water heaters & A/C units",
+    "Safe, responsible disposal",
+    "We handle disconnect/haul",
+  ],
+  "trash-removal": [
+    "One-time bulk trash removal",
+    "Recurring service available",
+    "Property cleanouts",
+    "Same-week pickup",
+  ],
+};
 
 const ServicesSection = () => (
   <section id="services" className="py-20 lg:py-28">
@@ -53,7 +87,7 @@ const ServicesSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <span className="text-base font-semibold text-primary uppercase tracking-wider primary-color">What We Do</span>
+        <span className="text-base font-semibold text-secondary uppercase tracking-wider">What We Do</span>
         <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mt-3">
           Junk Removal Services You Can Count On
         </h2>
@@ -62,33 +96,32 @@ const ServicesSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {services.map((service, i) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SERVICES.map((service, i) => (
           <motion.div
-            key={service.title}
+            key={service.slug}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="rounded-2xl overflow-hidden card-elevated border border-secondary/30 secondary-color group"
-            style={{ backgroundColor: "#1a1a1a" }}
+            transition={{ delay: (i % 6) * 0.08 }}
+            className="rounded-2xl overflow-hidden card-elevated border border-secondary/30 group bg-foreground"
           >
-            <div className="p-8">
-              <h3 className="font-heading text-2xl font-bold text-primary-foreground primary-color mb-4">{service.title}</h3>
-              <ul className="space-y-3 mb-6">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-base text-primary-foreground/80 primary-color">
-                    <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+            <div className="p-7">
+              <h3 className="font-heading text-xl font-bold text-white mb-4">{service.title}</h3>
+              <ul className="space-y-2.5 mb-5">
+                {(featureMap[service.slug] ?? []).slice(0, 3).map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-sm text-white/80">
+                    <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <a
-                href={service.href}
-                className="inline-flex items-center gap-2 text-base font-semibold text-secondary secondary-color hover:gap-3 transition-all"
+              <Link
+                to={`/services/${service.slug}`}
+                className="inline-flex items-center gap-2 text-base font-semibold text-secondary hover:gap-3 transition-all"
               >
                 Learn More <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         ))}
@@ -97,4 +130,5 @@ const ServicesSection = () => (
   </section>
 );
 
+export { featureMap };
 export default ServicesSection;

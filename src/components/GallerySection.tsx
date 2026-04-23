@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import furnitureBefore from "@/assets/gallery/furniture-before.jpg";
-import furnitureAfter from "@/assets/gallery/furniture-after.jpg";
-import garageCleanoutBefore from "@/assets/gallery/garage-cleanout-before.jpg";
-import garageCleanoutAfter from "@/assets/gallery/garage-cleanout-after.jpg";
-import junkPileBefore from "@/assets/gallery/junk-pile-before.jpg";
-import junkPileBefore2 from "@/assets/gallery/junk-pile-before-2.jpg";
-import emptyTrailer from "@/assets/gallery/empty-trailer.jpg";
-import loadedTrailer from "@/assets/gallery/loaded-trailer.jpg";
-import boxesBefore from "@/assets/gallery/boxes-before.jpg";
+import residential from "@/assets/stock/service-residential.jpg";
+import commercial from "@/assets/stock/service-commercial.jpg";
+import construction from "@/assets/stock/service-construction.jpg";
+import furniture from "@/assets/stock/service-furniture.jpg";
+import appliance from "@/assets/stock/service-appliance.jpg";
+import mattress from "@/assets/stock/service-mattress.jpg";
+import trash from "@/assets/stock/service-trash.jpg";
+import estate from "@/assets/stock/service-estate.jpg";
+import realtor from "@/assets/stock/service-realtor.jpg";
 
 const galleryItems = [
-  { src: furnitureBefore, label: "Furniture Removal – Before" },
-  { src: furnitureAfter, label: "Furniture Removal – After" },
-  { src: garageCleanoutBefore, label: "Garage Cleanout – Before" },
-  { src: garageCleanoutAfter, label: "Garage Cleanout – After" },
-  { src: junkPileBefore, label: "Junk Pile Removal" },
-  { src: loadedTrailer, label: "Loaded & Ready to Haul" },
-  { src: junkPileBefore2, label: "Residential Cleanout" },
-  { src: emptyTrailer, label: "Clean Trailer – Ready to Go" },
-  { src: boxesBefore, label: "Box & Storage Cleanout" },
+  { src: residential, label: "Residential Cleanout" },
+  { src: commercial, label: "Commercial Cleanout" },
+  { src: construction, label: "Construction Debris Hauled" },
+  { src: furniture, label: "Furniture Removal" },
+  { src: appliance, label: "Appliance Removal" },
+  { src: mattress, label: "Mattress Removal" },
+  { src: trash, label: "Trash & Bulk Removal" },
+  { src: estate, label: "Estate Cleanout" },
+  { src: realtor, label: "Realtor Turnover" },
 ];
 
 const GallerySection = () => (
@@ -34,10 +34,8 @@ const GallerySection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <span className="text-base font-semibold text-primary uppercase tracking-wider primary-color">Our Work</span>
-        <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mt-3">
-          See Us In Action
-        </h2>
+        <span className="text-base font-semibold text-secondary uppercase tracking-wider">Our Work</span>
+        <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mt-3">See Us In Action</h2>
       </motion.div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -72,7 +70,7 @@ const GallerySection = () => (
         className="text-center mt-12"
       >
         <Link to="/gallery">
-          <Button variant="secondary" size="lg" className="group text-lg px-10 py-6 h-auto secondary-color">
+          <Button variant="secondary" size="lg" className="group text-lg px-10 py-6 h-auto">
             View Full Gallery
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
