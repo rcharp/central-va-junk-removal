@@ -88,7 +88,6 @@ const ServiceAreaPage = () => {
         eyebrow="Service Area"
         title={`Junk Removal in ${area.name}`}
         subtitle={area.blurb}
-        image={area.image}
       />
 
       <section className="py-20">

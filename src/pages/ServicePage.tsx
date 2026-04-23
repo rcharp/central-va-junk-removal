@@ -68,7 +68,6 @@ const ServicePage = () => {
         eyebrow="Our Services"
         title={service.title}
         subtitle={`${service.short} Serving ${BUSINESS.region} with fast, friendly, fully insured service.`}
-        image={image}
       />
 
       <section className="py-20">
