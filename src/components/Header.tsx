@@ -40,7 +40,7 @@ const Header = () => {
           <img
             src={logo}
             alt={`${BUSINESS.name} Logo`}
-            className="w-16 h-auto lg:w-auto lg:h-[150px] lg:max-h-none lg:max-w-none"
+            className="w-20 h-auto lg:w-auto lg:h-[190px] lg:max-h-none lg:max-w-none"
           />
         </Link>
 
