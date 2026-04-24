@@ -34,13 +34,13 @@ const Header = () => {
 
   return (
     <header id="main-navbar" className="absolute top-0 left-0 right-0 z-50 max-w-[100vw]">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8 max-w-[100vw]">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between py-4 px-4 lg:px-8 gap-3 lg:gap-0 max-w-[100vw]">
         {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0 mr-2 lg:mr-4">
+        <Link to="/" className="flex items-center justify-center shrink-0 lg:mr-4">
           <img
             src={logo}
             alt={`${BUSINESS.name} Logo`}
-            className="w-28 h-auto lg:w-auto lg:h-[260px] lg:max-h-none lg:max-w-none"
+            className="w-40 h-auto lg:w-auto lg:h-[260px] lg:max-h-none lg:max-w-none"
           />
         </Link>
 
@@ -94,8 +94,8 @@ const Header = () => {
         </nav>
 
         {/* CTA - always visible */}
-        <div className="flex items-center flex-1 lg:flex-none min-w-0">
-          <div className="flex items-center justify-center gap-3 flex-1 lg:flex-none lg:justify-end">
+        <div className="flex items-center justify-center w-full lg:w-auto lg:flex-none min-w-0">
+          <div className="flex items-center justify-center gap-3 lg:flex-none lg:justify-end">
             <a
               id="nav-phone-btn"
               href={BUSINESS.phoneHref}
