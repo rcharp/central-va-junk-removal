@@ -29,21 +29,21 @@ const AboutSection = () => (
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pt-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <div className="w-10 h-10 shrink-0 rounded-xl bg-secondary/10 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-secondary" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-sm text-muted-foreground">Address</div>
                 <div className="text-base font-semibold text-foreground">{BUSINESS.address.full}</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <div className="w-10 h-10 shrink-0 rounded-xl bg-secondary/10 flex items-center justify-center">
                 <Phone className="w-5 h-5 text-secondary" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-sm text-muted-foreground">Phone</div>
-                <a href={BUSINESS.phoneHref} className="text-base font-semibold text-foreground hover:text-secondary transition-colors">
+                <a href={BUSINESS.phoneHref} className="text-base font-semibold text-foreground hover:text-secondary transition-colors whitespace-nowrap">
                   {BUSINESS.phone}
                 </a>
               </div>
