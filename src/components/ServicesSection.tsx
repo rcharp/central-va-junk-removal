@@ -1,6 +1,7 @@
-import { ArrowRight, Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { SERVICES } from "@/config/business";
 
 const featureMap: Record<string, string[]> = {
