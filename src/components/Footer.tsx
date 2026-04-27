@@ -9,7 +9,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="space-y-4">
-          <img src={logo} alt={`${BUSINESS.name} Logo`} className="w-auto" style={{ height: "220px" }} />
+          <img src={logo} alt={`${BUSINESS.name} Logo`} className="h-auto w-auto max-h-[220px] object-contain" />
           <p className="text-sm opacity-60">
             Professional junk removal & cleanouts serving {BUSINESS.region}.
           </p>
