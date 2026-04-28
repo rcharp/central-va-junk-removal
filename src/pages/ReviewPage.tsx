@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import useSEO from "@/hooks/useSEO";
 import { BUSINESS } from "@/config/business";
 import { Star } from "lucide-react";
+import heroBg from "@/assets/stock/hero-truck.jpg";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -60,6 +61,13 @@ const ReviewPage = () => {
 
   return (
     <PageShell>
+      {/* Navbar background strip (matches homepage hero) */}
+      <div
+        className="relative -mt-[120px] lg:-mt-[180px] h-[120px] lg:h-[180px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
