@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import useSEO from "@/hooks/useSEO";
 import { BUSINESS } from "@/config/business";
 import { Star } from "lucide-react";
+import heroBg from "@/assets/stock/hero-truck.jpg";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";

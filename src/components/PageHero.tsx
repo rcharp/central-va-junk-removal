@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Phone } from "lucide-react";
 import { useQuoteModal } from "@/components/QuoteModal";
 import { BUSINESS } from "@/config/business";
-import defaultPageHeroBg from "@/assets/stock/page-hero-bg.jpg";
+import defaultPageHeroBg from "@/assets/stock/hero-truck.jpg";
 
 interface PageHeroProps {
   eyebrow?: string;
