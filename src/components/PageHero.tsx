@@ -16,7 +16,7 @@ const PageHero = ({ eyebrow, title, subtitle, image, children }: PageHeroProps) 
   const { openQuoteModal } = useQuoteModal();
   const bg = image ?? defaultPageHeroBg;
   return (
-    <section className="relative -mt-[120px] lg:-mt-[180px] pt-[160px] lg:pt-[240px] pb-16 lg:pb-24 overflow-hidden">
+    <section className="relative -mt-[120px] lg:-mt-[290px] pt-[160px] lg:pt-[330px] pb-16 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }} />
       <div className="absolute inset-0 bg-black/70" />
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center text-white max-w-4xl">
