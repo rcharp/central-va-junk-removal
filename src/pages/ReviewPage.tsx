@@ -61,13 +61,17 @@ const ReviewPage = () => {
 
   return (
     <PageShell>
+      {/* Navbar background strip (matches homepage hero) */}
+      <div
+        className="relative -mt-[120px] lg:-mt-[180px] h-[120px] lg:h-[180px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
-            <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground">
-              How was your experience?
-            </h1>
-            <p className="text-lg text-muted-foreground mt-3">We'd love to hear your feedback</p>
+            {/* spacer */}
           </div>
 
           {done ? (
