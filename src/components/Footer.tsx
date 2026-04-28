@@ -22,7 +22,6 @@ const Footer = () => (
             <Link to="/" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Home</Link>
             <Link to="/about" className="block text-base opacity-80 hover:opacity-100 transition-opacity">About Us</Link>
             <Link to="/contact" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Contact</Link>
-            <Link to="/gallery" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Gallery</Link>
             <Link to="/blog" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Blog</Link>
             <Link to="/quote" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Get a Quote</Link>
             <Link to="/review" className="block text-base opacity-80 hover:opacity-100 transition-opacity">Leave a Review</Link>
