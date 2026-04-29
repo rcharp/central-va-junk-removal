@@ -1,4 +1,4 @@
-import { Percent, CreditCard, Search } from "lucide-react";
+import { Percent, CreditCard, Search, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
 import { useQuoteModal } from "./QuoteModal";
 import offersBg from "@/assets/stock/offers-bg.jpg";
@@ -18,6 +18,11 @@ const offers = [
     icon: Search,
     title: "Same-Day Pickup Available",
     description: "Need it gone today? Call us — we offer same-day and next-day junk removal across Central VA.",
+  },
+  {
+    icon: DollarSign,
+    title: "Money-Saving Discounts",
+    description: "Save $50 off any job — or stack the savings with $100 off full truckloads. Mention this offer when you book.",
   },
 ];
 
@@ -40,7 +45,7 @@ const SpecialOffers = () => {
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white mt-3">Special Offers & Benefits</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {offers.map((offer, i) => (
             <motion.div
               key={offer.title}
