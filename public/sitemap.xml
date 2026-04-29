@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://centralvahauling.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://centralvahauling.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://centralvahauling.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://centralvahauling.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://centralvahauling.com/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://centralvahauling.com/quote</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://centralvahauling.com/review</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://centralvahauling.com/blog</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://centralvahauling.com/services/commercial-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/residential-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/estate-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/foreclosure-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/property-manager-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/realtor-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/eviction-clean-outs</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/construction-cleanup</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/furniture-removal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/mattress-removal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/appliance-removal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/services/trash-removal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://centralvahauling.com/service-areas/fredericksburg-va</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/service-areas/spotsylvania-county-va</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://centralvahauling.com/service-areas/stafford-county-va</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
