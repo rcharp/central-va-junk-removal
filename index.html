@@ -32,8 +32,12 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://centralvahauling.com/#business",
       "name": "Central VA Hauling & Junk Removal",
-      "image": "https://centralvahauling.com/cvhjr-logo.png",
+      "alternateName": "Central VA Hauling",
+      "description": "Junk removal, hauling, and property cleanout services across Fredericksburg, Spotsylvania County, and Stafford County, Virginia.",
+      "image": "https://centralvahauling.com/og-image.png",
+      "logo": "https://centralvahauling.com/cvhjr-logo.png",
       "url": "https://centralvahauling.com",
       "telephone": "+15403702844",
       "email": "jshagent99@gmail.com",
@@ -45,13 +49,27 @@
         "postalCode": "22408",
         "addressCountry": "US"
       },
-      "openingHoursSpecification": {
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.2528,
+        "longitude": -77.4625
+      },
+      "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
         "opens": "07:00",
         "closes": "20:00"
-      },
-      "areaServed": ["Fredericksburg, VA","Spotsylvania County, VA","Stafford County, VA"],
+      }],
+      "areaServed": [
+        { "@type": "City", "name": "Fredericksburg, VA" },
+        { "@type": "AdministrativeArea", "name": "Spotsylvania County, VA" },
+        { "@type": "AdministrativeArea", "name": "Stafford County, VA" }
+      ],
+      "serviceType": [
+        "Junk Removal","Residential Cleanouts","Commercial Cleanouts","Estate Cleanouts",
+        "Foreclosure Cleanouts","Eviction Cleanouts","Furniture Removal","Appliance Removal",
+        "Mattress Removal","Construction Debris Removal","Trash Removal"
+      ],
       "priceRange": "$$",
       "founder": "Jeff Hasso",
       "sameAs": []
