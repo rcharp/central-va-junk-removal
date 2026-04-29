@@ -78,7 +78,7 @@ const Footer = () => (
         <p className="text-base opacity-60">
           © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
         </p>
-        <p className="text-sm opacity-50">Owner: {BUSINESS.owner}</p>
+        
       </div>
     </div>
   </footer>
