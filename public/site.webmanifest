@@ -1,0 +1,14 @@
+{
+  "name": "Central VA Hauling & Junk Removal",
+  "short_name": "Central VA Hauling",
+  "description": "Junk removal, hauling, and property cleanouts in Fredericksburg, Spotsylvania & Stafford County, VA.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
