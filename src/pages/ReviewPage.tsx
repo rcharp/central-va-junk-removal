@@ -63,7 +63,7 @@ const ReviewPage = () => {
     <PageShell>
       {/* Navbar background strip (matches homepage hero) */}
       <div
-        className="relative -mt-[120px] lg:-mt-[290px] h-[120px] lg:h-[290px] bg-cover bg-center"
+        className="relative -mt-[200px] lg:-mt-[290px] h-[200px] lg:h-[290px] bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-black/70" />
