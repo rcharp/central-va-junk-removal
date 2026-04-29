@@ -56,19 +56,19 @@ const Footer = () => (
         <div className="space-y-4">
           <h4 className="font-heading font-semibold text-base uppercase tracking-wider mb-4 opacity-60">Contact</h4>
           <div className="flex items-start gap-3">
-            <Phone className="w-4 h-4 mt-0.5 opacity-60" />
+            <Phone className="w-4 h-4 mt-0.5 opacity-60 shrink-0" />
             <a href={BUSINESS.phoneHref} className="text-base opacity-80 hover:opacity-100 transition-opacity">{BUSINESS.phone}</a>
           </div>
           <div className="flex items-start gap-3">
-            <Mail className="w-4 h-4 mt-0.5 opacity-60" />
+            <Mail className="w-4 h-4 mt-0.5 opacity-60 shrink-0" />
             <a href={`mailto:${BUSINESS.email}`} className="text-base opacity-80 hover:opacity-100 transition-opacity break-all">{BUSINESS.email}</a>
           </div>
           <div className="flex items-start gap-3">
-            <MapPin className="w-4 h-4 mt-0.5 opacity-60" />
+            <MapPin className="w-4 h-4 mt-0.5 opacity-60 shrink-0" />
             <span className="text-base opacity-80">{BUSINESS.address.full}</span>
           </div>
           <div className="flex items-start gap-3">
-            <Clock className="w-4 h-4 mt-0.5 opacity-60" />
+            <Clock className="w-4 h-4 mt-0.5 opacity-60 shrink-0" />
             <span className="text-base opacity-80">{BUSINESS.hours}</span>
           </div>
         </div>
